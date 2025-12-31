@@ -1,3 +1,23 @@
+<script>
+    const itemsAbout = [
+        {
+            icon: "👽",
+            title: "Compilador, não framework",
+            description: "Converte componentes em código otimizado durante a compilação."
+        },
+        {
+            icon: "⚡",
+            title: "Sem DOM Virtual",
+            description: "Atualizações diretas e cirúrgicas no DOM real."
+        },
+        {
+            icon: "🛠️",
+            title: "Verdadeiramente Reativo",
+            description: "Reatividade embutida na linguagem sem APIs complexas."
+        }
+    ]
+</script>
+
 <section class="flex flex-col items-center justify-center">
     <div class="flex flex-col items-center gap-2 mb-6">
         <h2 class="text-4xl font-bold">O que é Svelte?</h2>
