@@ -2,6 +2,7 @@
   import About from "./lib/about.svelte";
   import CTO from "./lib/cto.svelte";
   import Features from "./lib/features.svelte";
+  import Footer from "./lib/footer.svelte";
   import Header from "./lib/header.svelte";
   import Hero from "./lib/hero.svelte";
 
@@ -13,4 +14,5 @@
   <About />
   <Features />
   <CTO />
+  <Footer />
 </main>
