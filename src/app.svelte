@@ -1,5 +1,7 @@
 <script>
   import About from "./lib/about.svelte";
+  import CTO from "./lib/cto.svelte";
+  import Features from "./lib/features.svelte";
   import Header from "./lib/header.svelte";
   import Hero from "./lib/hero.svelte";
 
@@ -9,4 +11,6 @@
   <Header />
   <Hero />
   <About />
+  <Features />
+  <CTO />
 </main>

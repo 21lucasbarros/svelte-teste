@@ -18,7 +18,7 @@
     ]
 </script>
 
-<section class="flex flex-col items-center justify-center">
+<section class="p-8 flex flex-col items-center justify-center">
     <div class="flex flex-col items-center gap-2 mb-6">
         <h2 class="text-4xl font-bold">O que é Svelte?</h2>
         <div class="bg-orange-600 h-0.75 w-15"></div>
@@ -30,8 +30,8 @@
             <p>O resultado? Aplicações mais rápidas, bundles menores e uma experiência de desenvolvimento mais intuitiva.</p>
         </div>
         <div class="bg-white p-5 flex flex-col gap-4 rounded-lg border border-zinc-200 shadow-md max-w-md">
-            {#each itemsAbout as item }
-                <div class="flex flex-row gap-4 p-4 border border-zinc-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            {#each itemsAbout as item, index (index)}
+                <div class="flex flex-row gap-4 p-4 border border-zinc-200 rounded-lg shadow-sm hover:shadow-md transition-shadow items-center">
                     <div class="text-4xl">{item.icon}</div>
                     <div class="flex flex-col">
                         <h3 class="text-xl font-semibold mb-2">{item.title}</h3>
