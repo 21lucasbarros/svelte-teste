@@ -22,7 +22,7 @@
     const companies = ["Apple", "Spotify", "The New York Times", "IBM", "Ikea", "1Password", "Cloudflare"];
 </script>
 
-<section class="py-24 md:py-32 px-6 bg-linear-to-b from-zinc-50 to-white">
+<section id="about" class="py-24 md:py-32 px-6 bg-linear-to-b from-zinc-50 to-white">
     <div class="max-w-5xl mx-auto">
         <div class="flex flex-col items-center gap-3 mb-16">
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-zinc-900">O que é Svelte?</h2>

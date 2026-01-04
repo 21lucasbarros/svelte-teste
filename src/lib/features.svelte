@@ -1,54 +1,70 @@
 <script>
-import { Gauge, CodeXml, Zap, Slack, CircleCheck, Sparkle } from '@lucide/svelte';
+    import { Gauge, CodeXml, Zap, Palette, CircleCheck, Sparkles } from 'lucide-svelte';
 
-    const featureItem = [
+    const features = [
         {
             icon: Gauge,
-            title: "Performance Excepcional",
-            description: "Bundlers minúsculos e atualizações ultra-rápidas. Svelte gera código que manipula o DOM diretamente, sem overhead de runtime.",
+            title: "Performance",
+            highlight: "35x mais rápido",
+            description: "Manipulação direta do DOM sem overhead de runtime."
         },
         {
             icon: CodeXml,
-            title: "Menos codigo",
-            description: "Escreva componentes com muito menos boilerplate. A sintaxe limpa e intuitiva reduz a quantidade de código necessário.",
+            title: "Menos Código",
+            highlight: "40% menos linhas",
+            description: "Sintaxe intuitiva que elimina boilerplate."
         },
         {
             icon: Zap,
-            title: "Reatividade Real",
-            description: "A reatividade é parte da linguagem. Atualize uma variável e a UI se atualiza automaticamente, sem hooks ou setState."
+            title: "Reatividade",
+            highlight: "Zero configuração",
+            description: "Variáveis reativas por padrão, sem APIs."
         },
         {
-            icon: Slack,
-            title: "Scoped Styles",
-            description: "CSS com escopo por padrão. Escreva estilos dentro dos componentes sem se preocupar com conflitos globais."
-        }, 
+            icon: Palette,
+            title: "Estilos",
+            highlight: "Escopo automático",
+            description: "CSS isolado por componente nativamente."
+        },
         {
             icon: CircleCheck,
             title: "Acessibilidade",
-            description: "Avisos de acessibilidade integrados durante o desenvolvimento ajudam a criar aplicações inclusivas desde o início."
+            highlight: "Avisos em tempo real",
+            description: "A11y integrado no desenvolvimento."
         },
         {
-            icon: Sparkle,
-            title: "Transicoes Integradas",
-            description: "Sistema de transições e animações poderoso e fácil de usar, diretamente integrado ao framework."
+            icon: Sparkles,
+            title: "Animações",
+            highlight: "Built-in",
+            description: "Transições poderosas sem bibliotecas extras."
         }
     ]
 </script>
 
-<section class="p-6 md:p-8 flex flex-col items-center justify-center">
-    <div class="flex flex-col items-center gap-2 mb-6">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center">Principais Características</h2>
-        <div class="bg-orange-600 h-0.75 w-15"></div>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl w-full px-4 md:px-0">
-        {#each featureItem as feature, index (index)}
-        <div class="bg-white p-5 md:p-6 rounded-xl border border-zinc-200 shadow-sm flex flex-col gap-3 md:gap-4">
-            <div class="bg-red-600 p-2.5 md:p-3 rounded-lg w-fit">
-                <feature.icon class="h-5 w-5 md:h-6 md:w-6 text-white"/>
-            </div>
-            <h3 class="text-base md:text-lg font-semibold">{feature.title}</h3>
-            <p class="text-zinc-500 text-xs md:text-sm">{feature.description}</p>
+<section id="why-use" class="py-24 md:py-32 px-6 bg-zinc-50">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
+                Por que Svelte?
+            </h2>
+            <div class="w-12 h-1 bg-orange-500 rounded-full mx-auto"></div>
         </div>
-        {/each}
+
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-px bg-zinc-200 rounded-2xl overflow-hidden shadow-sm">
+            {#each features as feature, index}
+                <div class="bg-white/80 backdrop-blur-sm p-8 md:p-10 group hover:bg-white transition-colors duration-300">
+                    <feature.icon class="h-6 w-6 text-orange-500 mb-6"/>
+                    <p class="text-orange-600 text-sm font-medium tracking-wide mb-2">{feature.highlight}</p>
+                    <h3 class="text-xl md:text-2xl font-semibold text-zinc-900 mb-3">{feature.title}</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">{feature.description}</p>
+                </div>
+            {/each}
+        </div>
+
+        <div class="mt-16 text-center">
+            <p class="text-zinc-400 text-sm">
+                Junte-se a milhares de desenvolvedores que já fizeram a mudança.
+            </p>
+        </div>
     </div>
 </section>

@@ -1,8 +1,15 @@
-<script>
+<script lang="ts">
+    import { scrollToElement } from '../utils/scrollToElement';
+
     let menuOpen = $state(false);
 
     function toggleMenu() {
         menuOpen = !menuOpen;
+    }
+
+    function handleClick(event: MouseEvent & { currentTarget: HTMLAnchorElement }) {
+        scrollToElement(event);
+        menuOpen = false;
     }
 </script>
 
@@ -24,10 +31,10 @@
 
     <nav class="hidden md:block">
         <ul class="flex flex-row gap-4 lg:gap-6 text-zinc-500 text-sm lg:text-base">
-            <li class="hover:text-orange-600"><a href="#about">Sobre</a></li>
-            <li class="hover:text-orange-600"><a href="#caracters">Caracteristicas</a></li>
-            <li class="hover:text-orange-600"><a href="#why-use">Por que usar</a></li>
-            <li class="hover:text-orange-600"><a href="#how-it-works">Como funciona</a></li>
+            <li class="hover:text-orange-600"><a href="#about" onclick={handleClick}>Sobre</a></li>
+            <li class="hover:text-orange-600"><a href="#caracters" onclick={handleClick}>Caracteristicas</a></li>
+            <li class="hover:text-orange-600"><a href="#why-use" onclick={handleClick}>Por que usar</a></li>
+            <li class="hover:text-orange-600"><a href="#how-it-works" onclick={handleClick}>Como funciona</a></li>
         </ul>
     </nav>
 </header>
@@ -37,16 +44,16 @@
         <nav class="p-6">
             <ul class="flex flex-col gap-4 text-zinc-500 text-lg">
                 <li class="hover:text-orange-600 py-2 border-b border-zinc-100">
-                    <a href="#about" onclick={toggleMenu}>Sobre</a>
+                    <a href="#about" onclick={handleClick}>Sobre</a>
                 </li>
                 <li class="hover:text-orange-600 py-2 border-b border-zinc-100">
-                    <a href="#caracters" onclick={toggleMenu}>Caracteristicas</a>
+                    <a href="#caracters" onclick={handleClick}>Caracteristicas</a>
                 </li>
                 <li class="hover:text-orange-600 py-2 border-b border-zinc-100">
-                    <a href="#why-use" onclick={toggleMenu}>Por que usar</a>
+                    <a href="#why-use" onclick={handleClick}>Por que usar</a>
                 </li>
                 <li class="hover:text-orange-600 py-2 border-b border-zinc-100">
-                    <a href="#how-it-works" onclick={toggleMenu}>Como funciona</a>
+                    <a href="#how-it-works" onclick={handleClick}>Como funciona</a>
                 </li>
             </ul>
         </nav>
